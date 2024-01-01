@@ -80,6 +80,17 @@ function subtractTime() {
 function saveScore(event) {
   event.preventDefault();
   const initials = document.getElementById("initials").value;
+
+  // Save the score and initials
+  const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+  const newScore = { score, initials };
+  highScores.push(newScore);
+
+  // Save updated scores back to local storage
+  localStorage.setItem("highScores", JSON.stringify(highScores));
+
+  // Redirect to highscores page or update UI
+  window.location.href = "highscores.html"; // Example redirection
 }
 
 function endQuiz() {
@@ -95,5 +106,3 @@ function endQuiz() {
   const scoreForm = document.getElementById("scoreForm");
   scoreForm.addEventListener("submit", saveScore);
 }
-
-document.getElementById("startButton").addEventListener("click", startTimer);
