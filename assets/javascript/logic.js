@@ -14,6 +14,7 @@ function startQuiz() {
 
 function checkAnswer(selectedAnswer) {
   if (selectedAnswer === codingQuestions[currentQuestionIndex].correctAnswer) {
+    score++;
     // Correct answer logic
   } else {
     // Incorrect answer logic
@@ -78,7 +79,8 @@ function subtractTime() {
 
 function endQuiz() {
   clearInterval(timerId);
-  quizContainer.innerHTML = "<h2>Quiz completed! Your score: [Your Score]</h2>";
+  quizContainer.innerHTML =
+    "<h2>Quiz completed! Your score: " + score + "</h2>";
   // Additional logic for displaying the score and saving results
 }
 
