@@ -77,11 +77,23 @@ function subtractTime() {
   updateTimerDisplay();
 }
 
+function saveScore(event) {
+  event.preventDefault();
+  const initials = document.getElementById("initials").value;
+}
+
 function endQuiz() {
   clearInterval(timerId);
-  quizContainer.innerHTML =
-    "<h2>Quiz completed! Your score: " + score + "</h2>";
-  // Additional logic for displaying the score and saving results
+  quizContainer.innerHTML = `
+      <h2>Quiz completed! Your score: ${score}</h2>
+      <form id="scoreForm">
+          <input type="text" id="initials" placeholder="Enter Initials" required>
+          <button type="submit">Save Score</button>
+      </form>
+  `;
+
+  const scoreForm = document.getElementById("scoreForm");
+  scoreForm.addEventListener("submit", saveScore);
 }
 
 document.getElementById("startButton").addEventListener("click", startTimer);
