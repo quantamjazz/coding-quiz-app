@@ -11,15 +11,37 @@ function startQuiz() {
   displayQuestion();
 }
 
+function checkAnswer(selectedAnswer) {
+  if (selectedAnswer === codingQuestions[currentQuestionIndex].correctAnswer) {
+      // Correct answer logic
+  } else {
+      // Incorrect answer logic
+      subtractTime();
+  }
+
+  if (currentQuestionIndex < codingQuestions.length - 1) {
+      currentQuestionIndex++;
+      displayQuestion();
+  } else {
+      endQuiz();
+  }
+}
+
 function displayQuestion() {
   if (currentQuestionIndex < codingQuestions.length) {
     const questionData = codingQuestions[currentQuestionIndex];
     quizContainer.innerHTML = `
       <h2>${questionData.question}</h2>
-      <ul>
-        ${questionData.answers.map((answer) => `<li>${answer}</li>`).join("")}
-      </ul>
+      ${questionData.answers.map((answer) => `<button class="answer">${answer}</button>`).join("")}
     `;
+    // This code assumes that your buttons have the class 'answer'
+const answerButtons = document.querySelectorAll('.answer');
+answerButtons.forEach(button => {
+  button.addEventListener('click', function() {
+    checkAnswer(this.innerText);
+});
+});
+
   } else {
     // End the quiz when all questions are displayed
     quizContainer.innerHTML = "<h2>Quiz completed!</h2>";
@@ -53,9 +75,11 @@ function subtractTime() {
 }
 
 function endQuiz() {
-    clearInterval(timerId);
-    // Handle end of quiz
+  clearInterval(timerId);
+  quizContainer.innerHTML = "<h2>Quiz completed! Your score: [Your Score]</h2>";
+  // Additional logic for displaying the score and saving results
 }
+
 
 document.getElementById('startButton').addEventListener('click', startTimer);
 
