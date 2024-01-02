@@ -28,7 +28,7 @@ button {
 }
 
 button:hover {
-  background-color: #8570a5;
+  background-color: #8570a5 !important;
 }
 
 .choices button {
