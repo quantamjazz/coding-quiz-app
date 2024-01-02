@@ -6,20 +6,19 @@ let currentQuestionIndex = 0;
 let score = 0;
 
 function startQuiz() {
-  startTimer(); // Add this line to start the timer
+  startTimer();
   document.getElementById("start-screen").style.display = "none";
   startButton.style.display = "none";
   quizContainer.classList.remove("hide");
   displayQuestion();
 }
 
-
 function checkAnswer(selectedAnswer) {
   if (selectedAnswer === codingQuestions[currentQuestionIndex].correctAnswer) {
     score++;
-    // Correct answer logic
+    // Correct answer
   } else {
-    // Incorrect answer logic
+    // Incorrect answer
     subtractTime();
   }
 
@@ -40,7 +39,7 @@ function displayQuestion() {
         .map((answer) => `<button class="answer">${answer}</button>`)
         .join("")}
     `;
-    // This code assumes that your buttons have the class 'answer'
+
     const answerButtons = document.querySelectorAll(".answer");
     answerButtons.forEach((button) => {
       button.addEventListener("click", function () {
@@ -48,15 +47,14 @@ function displayQuestion() {
       });
     });
   } else {
-    // End the quiz when all questions are displayed
+    // End the quiz when all questions have been answered
     quizContainer.innerHTML = "<h2>Quiz completed!</h2>";
   }
 }
 
-// Add event listener to startButton to begin the quiz
 startButton.addEventListener("click", startQuiz);
 
-let timeLeft = 60; // Example: 60 seconds for the quiz
+let timeLeft = 60;
 let timerId;
 
 function startTimer() {
@@ -90,14 +88,14 @@ function endQuiz() {
   `;
 
   const scoreForm = document.getElementById("scoreForm");
-  scoreForm.addEventListener("submit", function(event) {
-      event.preventDefault();
-      const initials = document.getElementById("initials").value;
+  scoreForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    const initials = document.getElementById("initials").value;
 
-      const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
-      highScores.push({ score, initials });
-      localStorage.setItem("highScores", JSON.stringify(highScores));
+    const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+    highScores.push({ score, initials });
+    localStorage.setItem("highScores", JSON.stringify(highScores));
 
-      window.location.href = "highscores.html";
+    window.location.href = "highscores.html";
   });
 }
