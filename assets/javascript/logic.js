@@ -6,11 +6,13 @@ let currentQuestionIndex = 0;
 let score = 0;
 
 function startQuiz() {
+  startTimer(); // Add this line to start the timer
   document.getElementById("start-screen").style.display = "none";
   startButton.style.display = "none";
   quizContainer.classList.remove("hide");
   displayQuestion();
 }
+
 
 function checkAnswer(selectedAnswer) {
   if (selectedAnswer === codingQuestions[currentQuestionIndex].correctAnswer) {
@@ -77,22 +79,6 @@ function subtractTime() {
   updateTimerDisplay();
 }
 
-function saveScore(event) {
-  event.preventDefault();
-  const initials = document.getElementById("initials").value;
-
-  // Save the score and initials
-  const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
-  const newScore = { score, initials };
-  highScores.push(newScore);
-
-  // Save updated scores back to local storage
-  localStorage.setItem("highScores", JSON.stringify(highScores));
-
-  // Redirect to highscores page or update UI
-  window.location.href = "highscores.html"; // Example redirection
-}
-
 function endQuiz() {
   clearInterval(timerId);
   quizContainer.innerHTML = `
@@ -104,5 +90,14 @@ function endQuiz() {
   `;
 
   const scoreForm = document.getElementById("scoreForm");
-  scoreForm.addEventListener("submit", saveScore);
+  scoreForm.addEventListener("submit", function(event) {
+      event.preventDefault();
+      const initials = document.getElementById("initials").value;
+
+      const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+      highScores.push({ score, initials });
+      localStorage.setItem("highScores", JSON.stringify(highScores));
+
+      window.location.href = "highscores.html";
+  });
 }
