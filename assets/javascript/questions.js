@@ -51,6 +51,31 @@ const codingQuestions = [
     answers: ["6", "33", "undefined", "Error"],
     correctAnswer: "33",
   },
+  {
+    question: "How can you prevent the default behavior of an HTML form submission using JavaScript?",
+answers: ["event.preventDefault", "event.stopDefault", "event.halt", "event.cancelSubmission"],
+correctAnswer: "event.preventDefault",
+  },
+  {
+    question: "What is the purpose of the localStorage object in JavaScript?",
+answers: ["Storing data on the server", "Storing data locally in the browser", "Handling asynchronous operations", "Managing CSS styles"],
+correctAnswer: "Storing data locally in the browser",
+  }
+  {
+    question: "How do you check if a variable is an array in JavaScript?",
+    answers: ["isArray(variable)", "variable.isArray()", "typeof variable === 'array'", "Array.isType(variable)"],
+    correctAnswer: "isArray(variable)",
+  },
+  {
+    question: "What is the difference between 'let' and 'const' in JavaScript?",
+    answers: ["let is used for function-scoped variables, while const is used for block-scoped variables.", "There is no difference; they can be used interchangeably.", "let is used for block-scoped variables, while const is used for variables that can be reassigned.", "let is used for variables that cannot be reassigned, while const is used for block-scoped variables."],
+    correctAnswer: "let is used for block-scoped variables, while const is used for variables that can be reassigned.",
+  },
+  {
+    question: "How do you convert a string to a number in JavaScript?",
+    answers: ["parseInt(string)", "stringToNumber(string)", "toNumber(string)", "Number(string)"],
+    correctAnswer: "Number(string)",
+  },
 ];
 
 export { codingQuestions };
