@@ -1,5 +1,5 @@
 function displayScores() {
-  const scoreList = document.getElementById("highscores");
+  const scoreList = document.getElementById("highScores");
   scoreList.innerHTML = "";
 
   const retrievedScores = JSON.parse(localStorage.getItem("highScores")) || [];
@@ -20,3 +20,4 @@ function loadScores() {
   displayScores();
 }
 loadScores();
+

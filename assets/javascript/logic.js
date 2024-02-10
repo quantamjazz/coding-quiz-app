@@ -5,6 +5,9 @@ const quizContainer = document.getElementById("questions");
 let currentQuestionIndex = 0;
 let score = 0;
 
+startButton.addEventListener("click", startQuiz);
+
+
 function startQuiz() {
   startTimer();
   document.getElementById("start-screen").style.display = "none";
@@ -52,7 +55,6 @@ function displayQuestion() {
   }
 }
 
-startButton.addEventListener("click", startQuiz);
 
 let timeLeft = 60;
 let timerId;
