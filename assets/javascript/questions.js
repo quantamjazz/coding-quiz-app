@@ -60,7 +60,7 @@ correctAnswer: "event.preventDefault",
     question: "What is the purpose of the localStorage object in JavaScript?",
 answers: ["Storing data on the server", "Storing data locally in the browser", "Handling asynchronous operations", "Managing CSS styles"],
 correctAnswer: "Storing data locally in the browser",
-  }
+  },
   {
     question: "How do you check if a variable is an array in JavaScript?",
     answers: ["isArray(variable)", "variable.isArray()", "typeof variable === 'array'", "Array.isType(variable)"],
@@ -75,7 +75,7 @@ correctAnswer: "Storing data locally in the browser",
     question: "How do you convert a string to a number in JavaScript?",
     answers: ["parseInt(string)", "stringToNumber(string)", "toNumber(string)", "Number(string)"],
     correctAnswer: "Number(string)",
-  },
+  }
 ];
 
 export { codingQuestions };
