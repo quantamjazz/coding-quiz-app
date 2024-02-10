@@ -1,25 +1,61 @@
-##coding-quiz-app
+# Coding Quiz App
 
-Website with interative coding quiz using JS, HTML, CSS and Bootstrap.
+Project Overview
+The Coding Quiz App is a web-based application designed to challenge users with a series of JavaScript-related questions. Users can test their coding knowledge under a time constraint, with incorrect answers resulting in time penalties. The app offers a user-friendly interface and provides instant feedback on the correctness of answers.
 
-#Description
-Test your JavaScript knowledge with this coding quiz, answer the questions within a 60 second time limit and save your scores.
+# Table of Contents
+1. [Installation](#installation)
+2. [Usage](#usage)
+3. [Features](#features)
+4. [Technologies Used](#technologies-used)
+5. [Contributing](#contributing)
+6. [License](#license)
+7. [Contact](#contact)
 
-#Features:
 
-Multiple-choice JavaScript questions. Timer to track your remaining time. Score calculation based on correct answers. Timer is reduced when wrong answers are selected. High score tracking with initials input. Responsive design for all screen sizes.
+## Installation
+To set up the Coding Quiz App locally, follow these steps:
 
-#Instructions:
+bash/terminal:
+Clone the repository
+git clone https://github.com/quantamjazz/coding-quiz-app.git
 
-Click "Start Quiz" to begin. Answer questions to earn points. Incorrect answers deduct time. Finish to see your final score. Save your high score with your initials.
+## Navigate to the project directory
+cd coding-quiz-app
 
-#Contributions:
+## Usage
+Open the app URL in your browser.
+Click on "Start Quiz" to begin the coding challenge.
+Answer each question within the time limit.
+Receive instant feedback on the correctness of your answers.
+Enter your initials to save your score at the end.
 
-Contributions welcome
+## Features
+Multiple-choice questions on JavaScript concepts.
+Time-based scoring with penalties for incorrect answers.
+User-friendly interface for an engaging quiz experience.
 
-#Licence:
+## Technologies Used
+HTML
+CSS
+JavaScript
+Bootstrap
 
-MIT Licence
+## Contributing
+Contributions to the Coding Quiz App are welcome! Follow these steps to contribute:
+
+Fork the repository.
+Create a new branch.
+Make your changes.
+Submit a pull request.
+
+## License
+This project is licensed under the MIT License.
+
+## Contact
+For questions, feedback, or support, please contact:
+
+GitHub: quantamjazz
 
 ![image](https://github.com/quantamjazz/coding-quiz-app/assets/148623614/cce60682-6c2b-4875-860d-50b9fafdfcf1)
 ![image](https://github.com/quantamjazz/coding-quiz-app/assets/148623614/87798f9d-8e2d-44c7-ae2f-3c03765980d8)
