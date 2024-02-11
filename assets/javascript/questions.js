@@ -63,13 +63,13 @@ correctAnswer: "Storing data locally in the browser",
   },
   {
     question: "How do you check if a variable is an array in JavaScript?",
-    answers: ["isArray(variable)", "variable.isArray()", "typeof variable === 'array'", "Array.isType(variable)"],
-    correctAnswer: "isArray(variable)",
+    answers: ["isArray(variable)", "variable.isArray()", "typeof variable === 'array'", "Array.isArray(variable)"],
+    correctAnswer: "Array.isArray(variable)",
   },
   {
     question: "What is the difference between 'let' and 'const' in JavaScript?",
-    answers: ["let is used for function-scoped variables, while const is used for block-scoped variables.", "There is no difference; they can be used interchangeably.", "let is used for block-scoped variables, while const is used for variables that can be reassigned.", "let is used for variables that cannot be reassigned, while const is used for block-scoped variables."],
-    correctAnswer: "let is used for block-scoped variables, while const is used for variables that can be reassigned.",
+    answers: ["let is used for function-scoped variables, while const is used for block-scoped variables.", "There is no difference; they can be used interchangeably.", "let is used for block-scoped variables, while const is used for variables that cannot be reassigned.", "let is used for variables that cannot be reassigned, while const is used for block-scoped variables."],
+    correctAnswer: "let is used for block-scoped variables, while const is used for variables that cannot be reassigned.",
   },
   {
     question: "How do you convert a string to a number in JavaScript?",

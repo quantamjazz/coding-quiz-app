@@ -43,9 +43,17 @@ function displayQuestion() {
     const questionData = codingQuestions[currentQuestionIndex];
     quizContainer.innerHTML = `
       <h2>${questionData.question}</h2>
-      ${questionData.answers
-        .map((answer) => `<button class="answer">${answer}</button>`)
-        .join("")}
+      <div class="row">
+        ${questionData.answers
+          .map(
+            (answer) => `
+              <div class="col-12">
+                <button class="btn btn-secondary btn-block answer">${answer}</button>
+              </div>
+            `
+          )
+          .join("")}
+      </div>
     `;
 
     const answerButtons = document.querySelectorAll(".answer");
