@@ -1,5 +1,6 @@
 import { codingQuestions } from "./questions.js";
 
+const feedback = document.getElementById("feedback");
 const startButton = document.getElementById("startButton");
 const quizContainer = document.getElementById("questions");
 let currentQuestionIndex = 0;
@@ -20,9 +21,13 @@ function checkAnswer(selectedAnswer) {
   if (selectedAnswer === codingQuestions[currentQuestionIndex].correctAnswer) {
     score++;
     // Correct answer
+    feedback.classList.remove("hide");
+    feedback.textContent = "Correct!";
   } else {
     // Incorrect answer
     subtractTime();
+    feedback.classList.remove("hide");
+    feedback.textContent = "Incorrect!";
   }
 
   if (currentQuestionIndex < codingQuestions.length - 1) {
@@ -50,11 +55,9 @@ function displayQuestion() {
       });
     });
   } else {
-    // End the quiz when all questions have been answered
     quizContainer.innerHTML = "<h2>Quiz completed!</h2>";
   }
 }
-
 
 let timeLeft = 60;
 let timerId;

@@ -87,3 +87,13 @@ li:nth-child(odd) {
   top: 10px;
   right: 10px;
 }
+
+.highScores {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+}
+
+.highScores a:hover {
+  color: fuchsia;
+}

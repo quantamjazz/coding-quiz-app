@@ -20,4 +20,3 @@ function loadScores() {
   displayScores();
 }
 loadScores();
-
